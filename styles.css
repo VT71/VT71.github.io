@@ -252,9 +252,10 @@ button[type='submit']:hover {
     cursor: pointer;
 }
 
-.pageclip-form__success {
+.pageclip-form__success__message {
     font-family: var(--secondary-font);
     color: white;
+    margin-top: 1em;
 }
 
 .social-container {
