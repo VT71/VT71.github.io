@@ -256,6 +256,7 @@ button[type='submit']:hover {
     font-family: var(--secondary-font);
     color: white;
     margin-top: 1em;
+    font-weight: bold;
 }
 
 .social-container {
