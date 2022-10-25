@@ -24,6 +24,14 @@ header {
     padding: 3em 1em 5em 1em;
 }
 
+.name.heading {
+    color: white;
+}
+
+.name.heading:hover {
+    color: var(--aqua);
+}
+
 .work-container {
     background: rgb(1, 21, 38);
     background: linear-gradient(
@@ -129,7 +137,11 @@ textarea::placeholder {
 .projects-section {
     padding-left: 1em;
     padding-right: 1em;
-    margin: auto;
+    margin: 0 auto 0 auto;
+}
+
+.projects-section h1 {
+    margin-bottom: 1.8em;
 }
 
 .work-heading {
@@ -137,28 +149,31 @@ textarea::placeholder {
 }
 
 .projects-container {
+    width: 90%;
     display: flex;
     flex-direction: row;
     align-content: center;
+    justify-content: space-between;
+}
+
+.projects-container:nth-last-of-type(1) {
     justify-content: center;
-    padding: 6em 0;
 }
 
 .project-tile {
     border: 1px solid white;
     text-align: center;
+    width: 31%;
     padding: 1em 1em;
     border-radius: 25px;
     border: 1px solid var(--aqua);
-    margin: auto;
+    position: relative;
+    height: 30em;
+    transition: width 1s ease-in-out;
 }
 
-.project-tile:nth-of-type(1) {
-    margin-right: 4em;
-}
-
-.project-tile:nth-of-type(3) {
-    margin-left: 4em;
+.project-tile:hover {
+    width: 50%;
 }
 
 .project-tile h2 {
@@ -173,6 +188,10 @@ textarea::placeholder {
 .project-tile a {
     color: var(--aqua);
     text-decoration: underline;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 1em;
 }
 
 .project-tile a:hover {
@@ -180,7 +199,15 @@ textarea::placeholder {
     text-decoration: none;
 }
 
+.project-img-container {
+    height: 50%;
+    width: 100%;
+    z-index: -1;
+}
+
 .project-img {
+    object-fit: cover;
+    height: 100%;
     width: 100%;
 }
 
@@ -197,7 +224,7 @@ textarea::placeholder {
     width: 400px;
     margin: auto;
     text-align: center;
-    padding: 2em 0;
+    padding: 10em 0 5em 0;
 }
 
 .contact-section p {
@@ -278,6 +305,11 @@ button[type='submit']:hover {
     text-decoration: none;
 }
 
+.social-container .fa-solid:hover,
+.social-container .fa-brands:hover {
+    color: #7ce7ff;
+}
+
 @media (min-width: 800px) {
     .navbar-container {
         max-width: 1000px;
@@ -287,8 +319,11 @@ button[type='submit']:hover {
         max-width: 1000px;
     }
     .projects-container {
-        max-width: 800px;
-        margin: auto;
+        max-width: 90%;
+        margin: 0 auto 4em auto;
+    }
+    .projects-container:nth-last-of-type(1) {
+        margin-bottom: 0;
     }
 }
 
@@ -311,11 +346,30 @@ button[type='submit']:hover {
     .project-tile:not(.project-tile:last-of-type) {
         margin-bottom: 3em;
     }
+    .project-tile a {
+        bottom: 0.3em;
+    }
+    .project-tile {
+        transition: width 1s ease-in-out;
+    }
+    .project-tile:hover {
+        width: 27.5em;
+    }
+    .project-tile a {
+        bottom: 2em;
+    }
     .projects-container {
+        margin: auto;
         display: flex;
         flex-direction: column;
         align-content: center;
         justify-content: center;
-        padding: 6em 0;
+        padding: 0;
+    }
+    .projects-container:not(.projects-container:nth-last-of-type(1)) {
+        margin-bottom: 3em;
+    }
+    .project-img-container {
+        z-index: -1;
     }
 }
