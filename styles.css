@@ -28,7 +28,7 @@ header {
     color: white;
 }
 
-.name.heading:hover {
+.top-name-link:hover h1 {
     color: var(--aqua);
 }
 
