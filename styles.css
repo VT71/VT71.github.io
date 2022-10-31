@@ -158,7 +158,7 @@ textarea::placeholder {
 }
 
 .projects-container:nth-last-of-type(1) {
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .project-tile {
